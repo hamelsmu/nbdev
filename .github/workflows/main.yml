@@ -9,7 +9,7 @@ on:
 defaults:
   run:
     shell: bash
-
+jobs:
   nbdev_test_nbs:
 #     strategy:
 #       fail-fast: false
