@@ -1,7 +1,6 @@
 name: CI
 on:
   workflow_dispatch:
-  pull_request:
   push:
     branches: [master]
 # env:
@@ -11,25 +10,12 @@ defaults:
     shell: bash
 jobs:
   nbdev_test_nbs:
-#     strategy:
-#       fail-fast: false
-#       matrix:
-#         os:  [ubuntu, windows]
-#     runs-on: ${{ matrix.os }}-latest
     runs-on: ubuntu-latest
 #     container: fastai/jekyll
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
-    - name: Run tests
+    - name: See Shell
       run: |
-        pip install -qe .
-        pip install -qU fastcore
-    - name: debug
-      uses: mxschmitt/action-tmate@v3
-      # make test
+        echo $SHELL
+
 
   
